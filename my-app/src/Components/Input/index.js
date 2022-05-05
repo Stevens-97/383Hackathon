@@ -44,8 +44,10 @@ function Input() {
               onClick={(e) => {
                 handleClick(e);
               }}
-            ></button>
-            <img class="searchIcon" src={search} alt="Search" />
+            >
+              <img class="searchIcon" src={search} alt="Search" />
+            </button>
+
             <input
               type="search"
               id="search-input"
