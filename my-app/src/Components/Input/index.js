@@ -24,10 +24,9 @@ function Input({ setData, setCity, city }) {
           `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&exclude=daily&appid=fd903fcfc90838b5318cea86cb793633`
         );
         let data = await res.json();
-        console.log(data.list);
+
         setData(makeNewForecastList(data.list));
-        console.log(data.list);
-        console.log(data.list[0]);
+
         setToggleSearch(false);
       }
     }
@@ -35,38 +34,35 @@ function Input({ setData, setCity, city }) {
   }, [toggleSearch]);
 
   function handleInput(e) {
-    console.log(e.target.value);
     setInputText(e.target.value);
   }
 
   function handleClick(e) {
     e.preventDefault();
     setCity(inputText);
-    console.log(city);
+
     setToggleSearch(true);
   }
 
   return (
     <div>
       <form>
-        <div class="searchBar">
-          <form>
-            <button
-              type="submit"
-              onClick={(e) => {
-                handleClick(e);
-              }}
-            >
-              <img class="searchIcon" src={search} alt="Search" />
-            </button>
-            <input
-              type="search"
-              id="search-input"
-              onChange={(e) => {
-                handleInput(e);
-              }}
-            />
-          </form>
+        <div className="searchBar">
+          <button
+            type="submit"
+            onClick={(e) => {
+              handleClick(e);
+            }}
+          >
+            <img className="searchIcon" src={search} alt="Search" />
+          </button>
+          <input
+            type="search"
+            id="search-input"
+            onChange={(e) => {
+              handleInput(e);
+            }}
+          />
         </div>
       </form>
     </div>

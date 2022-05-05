@@ -4,9 +4,9 @@ export default function InitialForecast({ dailyForecast, city }) {
   return (
     <div className="detailedViewSection">
       <span className="dateAndLocation">
-        <h1>{city}</h1>
-        <h2>{dailyForecast.main.temp}°C</h2>
-        <h3>{dailyForecast.dt_txt}</h3>
+        <h2>{Math.floor(dailyForecast.main.temp_max)}°C</h2>
+
+        <h3>{dailyForecast.dt_txt.substring(0, 10)}</h3>
       </span>
       <span className="forcastSection">
         <img
