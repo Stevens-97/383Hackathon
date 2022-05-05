@@ -2,6 +2,8 @@ import search from "../../search.svg";
 import "./index.css";
 import { useEffect, useState } from "react";
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 function Input({ setData, setCity, city }) {
   const [toggleSearch, setToggleSearch] = useState(false);
   const [inputText, setInputText] = useState("");
@@ -21,7 +23,7 @@ function Input({ setData, setCity, city }) {
     async function fetchData() {
       if (toggleSearch) {
         let res = await fetch(
-          `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&exclude=daily&appid=fd903fcfc90838b5318cea86cb793633`
+          `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&exclude=daily&appid=${API_KEY}`
         );
         let data = await res.json();
 
