@@ -1,0 +1,23 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+  height: 30px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  width: 75vw;
+  margin: 0 auto;
+  margin-top: 40px;
+  max-width: 560px;
+}
+
+.searchIcon {
+  height: 30px;
+}
+
+.searchBar input {
+  flex: 1;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+}
