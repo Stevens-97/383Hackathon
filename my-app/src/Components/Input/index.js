@@ -2,10 +2,9 @@ import search from "../../search.svg";
 import "./index.css";
 import { useEffect, useState } from "react";
 
-function Input() {
+function Input({ setData, setCity, city }) {
   const [toggleSearch, setToggleSearch] = useState(false);
   const [inputText, setInputText] = useState("");
-  const [city, setCity] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -14,6 +13,7 @@ function Input() {
           `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=a62faa97d1a6202196954776c4f104b3`
         );
         let data = await res.json();
+        setData(data.list);
         console.log(data);
         console.log(data.list[0]);
         setToggleSearch(false);
@@ -44,8 +44,9 @@ function Input() {
               onClick={(e) => {
                 handleClick(e);
               }}
-            ></button>
-            <img class="searchIcon" src={search} alt="Search" />
+            >
+              <img class="searchIcon" src={search} alt="Search" />
+            </button>
             <input
               type="search"
               id="search-input"
