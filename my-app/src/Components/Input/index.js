@@ -6,6 +6,17 @@ function Input({ setData, setCity, city }) {
   const [toggleSearch, setToggleSearch] = useState(false);
   const [inputText, setInputText] = useState("");
 
+  function makeNewForecastList(original) {
+    return [
+      original[0],
+      original[8],
+      original[16],
+      original[24],
+      original[32],
+      original[39],
+    ];
+  }
+
   useEffect(() => {
     async function fetchData() {
       if (toggleSearch) {
@@ -14,7 +25,7 @@ function Input({ setData, setCity, city }) {
         );
         let data = await res.json();
         console.log(data.list);
-        setData(data.list);
+        setData(makeNewForecastList(data.list));
         console.log(data.list);
         console.log(data.list[0]);
         setToggleSearch(false);
