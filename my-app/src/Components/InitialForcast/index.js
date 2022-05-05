@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function InitialForecast({ dailyForecast, city }) {
+  const [toggle, setToggle] = useState(false);
+  function handleClick() {
+    setToggle(!toggle);
+  }
+
   return (
-    <div className="detailedViewSection">
+    <div className="detailedViewSection" onClick={handleClick}>
       <span className="dateAndLocation">
         <h2>{Math.floor(dailyForecast.main.temp_max)}°C</h2>
 
@@ -15,6 +20,14 @@ export default function InitialForecast({ dailyForecast, city }) {
           alt="weather icon"
         ></img>
         <p className="description">{dailyForecast.weather[0].description}</p>
+      </span>
+      <span>
+        {toggle && (
+          <span>
+            <p>Humidity: {dailyForecast.main.humidity}</p>
+            <p>Feels like: {dailyForecast.main.feels_like}</p>
+          </span>
+        )}
       </span>
     </div>
   );
