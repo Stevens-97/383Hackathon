@@ -5,7 +5,8 @@ export default function InitialForecast({ dailyForecast, city }) {
     <div className="detailedViewSection">
       <span className="dateAndLocation">
         <h1>{city}</h1>
-        <h2>{dailyForecast.main.temp}</h2>
+        <h2>{dailyForecast.main.temp}°C</h2>
+        <h3>{dailyForecast.dt_txt}</h3>
       </span>
       <span className="forcastSection">
         <img

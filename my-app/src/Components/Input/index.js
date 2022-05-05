@@ -10,7 +10,7 @@ function Input({ setData, setCity, city }) {
     async function fetchData() {
       if (toggleSearch) {
         let res = await fetch(
-          `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=fd903fcfc90838b5318cea86cb793633`
+          `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&exclude=daily&appid=fd903fcfc90838b5318cea86cb793633`
         );
         let data = await res.json();
         console.log(data.list);
