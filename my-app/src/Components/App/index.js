@@ -1,6 +1,7 @@
 import "./index.css";
 import Input from "../Input";
 import InitialForecast from "../InitialForcast";
+import { useEffect, useState } from "react";
 
 function App() {
   const [data, setData] = useState([]);
