@@ -6,6 +6,7 @@ function Input() {
   const [toggleSearch, setToggleSearch] = useState(false);
   const [inputText, setInputText] = useState("");
   const [city, setCity] = useState("");
+
   useEffect(() => {
     async function fetchData() {
       if (toggleSearch) {
@@ -20,6 +21,7 @@ function Input() {
     }
     fetchData();
   }, [toggleSearch]);
+
   function handleInput(e) {
     console.log(e.target.value);
     setInputText(e.target.value);
