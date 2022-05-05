@@ -16,7 +16,7 @@ function App() {
         {data.map((dailyForecast, index) => (
           <InitialForecast
             city={city}
-            dailyForecast={[dailyForecast]}
+            dailyForecast={dailyForecast}
             key={index}
           />
         ))}

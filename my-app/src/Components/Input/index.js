@@ -15,7 +15,7 @@ function Input({ setData, setCity, city }) {
         let data = await res.json();
         console.log(data.list);
         setData(data.list);
-        console.log(data);
+        console.log(data.list);
         console.log(data.list[0]);
         setToggleSearch(false);
       }
