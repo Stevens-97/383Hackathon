@@ -20,3 +20,11 @@
   border: none;
   outline: none;
 }
+
+.weatherIcon {
+  height: 60px;
+}
+
+.description::first-letter {
+  text-transform: capitalize;
+}

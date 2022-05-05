@@ -10,10 +10,11 @@ export default function InitialForecast({ dailyForecast, city }) {
       </span>
       <span className="forcastSection">
         <img
+          className="weatherIcon"
           src={`http://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}.png`}
           alt="weather icon"
         ></img>
-        <p></p>
+        <p className="description">{dailyForecast.weather[0].description}</p>
       </span>
     </div>
   );
