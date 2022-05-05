@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function InitialForecast() {
+export default function InitialForecast({ data, city }) {
   return (
     <div className="detailedViewSection">
       <span className="dateAndLocation">
@@ -8,7 +8,10 @@ export default function InitialForecast() {
         <h2>{data.list[0].main.temp}</h2>
       </span>
       <span className="forcastSection">
-        <img></img>
+        <img
+          src={`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`}
+          alt="weather icon"
+        ></img>
         <p></p>
       </span>
     </div>
