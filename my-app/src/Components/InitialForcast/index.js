@@ -1,8 +1,14 @@
 import React from "react";
 
-export default function InitialForecast({ data, city }) {
+export default function InitialForecast({ dailyForecast, city }) {
   return (
     <div className="detailedViewSection">
+      <p>{dailyForecast[0]}</p>
+    </div>
+  );
+}
+
+/*
       <span className="dateAndLocation">
         <h1>{city}</h1>
         <h2>{data.list[0].main.temp}</h2>
@@ -14,6 +20,5 @@ export default function InitialForecast({ data, city }) {
         ></img>
         <p></p>
       </span>
-    </div>
-  );
-}
+
+*/
